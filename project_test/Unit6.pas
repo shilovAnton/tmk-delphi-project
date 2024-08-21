@@ -13,7 +13,7 @@ type
   public
     { Public declarations }
   end;
-          //test
+
 var
   Form6: TForm6;
 
