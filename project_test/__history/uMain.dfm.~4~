@@ -1,0 +1,101 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'TMK '#1058#1077#1089#1090#1086#1074#1086#1077
+  ClientHeight = 764
+  ClientWidth = 693
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object ButtonFirstTask: TButton
+    Left = 160
+    Top = 88
+    Width = 289
+    Height = 65
+    Caption = #1047#1072#1076#1072#1085#1080#1077' '#1076#1083#1103' '#1089#1086#1073#1077#1089#1077#1076#1086#1074#1072#1085#1080#1103' ('#1087#1077#1088#1074#1072#1103' '#1095#1072#1089#1090#1100')'
+    TabOrder = 0
+    OnClick = ButtonFirstTaskClick
+  end
+  object ButtonSecondTask: TButton
+    Left = 160
+    Top = 248
+    Width = 289
+    Height = 65
+    Caption = #1047#1072#1076#1072#1085#1080#1077' '#1076#1083#1103' '#1089#1086#1073#1077#1089#1077#1076#1086#1074#1072#1085#1080#1103' 2 ('#1074#1090#1086#1088#1072#1103' '#1095#1072#1089#1090#1100')'
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 32
+    Top = 344
+    Width = 641
+    Height = 412
+    DataSource = DataSource1
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'firm_name'
+        Title.Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1092#1080#1088#1084#1099
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'city_jur'
+        Title.Caption = #1070#1088#1080#1076#1080#1095#1080#1089#1082#1080#1081' '#1072#1076#1088#1077#1089
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'city_post'
+        Title.Caption = #1055#1086#1095#1090#1086#1074#1099#1081' '#1072#1076#1088#1077#1089
+        Width = 200
+        Visible = True
+      end>
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\TMK_project\Data' +
+      'base1.mdb;Persist Security Info=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 584
+    Top = 16
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 584
+    Top = 96
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT f.name AS firm_name, c.name AS city_jur, c2.name AS city_' +
+        'post'
+      
+        'FROM (FIRM AS f INNER JOIN city AS c ON c.city_id = F.JUR_CITY_I' +
+        'D) LEFT JOIN city AS c2 ON c2.city_id = F.POST_CITY_ID'
+      
+        'WHERE Instr(LCase(f.name),LCase('#39#1075#39'))>0 And (Instr(LCase(c.name)' +
+        ',LCase('#39#1084#1086#39'))>0 Or Instr(LCase(c2.name),LCase('#39#39'))>0)'
+      'ORDER BY f.name;')
+    Left = 584
+    Top = 168
+  end
+end

@@ -4,10 +4,15 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uFirstTask, Data.DB,
+  Vcl.Grids, Vcl.DBGrids, Data.Win.ADODB;
 
 type
-  TForm6 = class(TForm)
+  TFormMain = class(TForm)
+    ButtonFirstTask: TButton;
+    ButtonSecondTask: TButton;
+    ADOConnection1: TADOConnection;
+    procedure ButtonFirstTaskClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -15,10 +20,15 @@ type
   end;
 
 var
-  Form6: TForm6;
+  FormMain: TFormMain;
 
 implementation
 
 {$R *.dfm}
+
+procedure TFormMain.ButtonFirstTaskClick(Sender: TObject);
+begin
+  FormFirstTask.Show;
+end;
 
 end.
