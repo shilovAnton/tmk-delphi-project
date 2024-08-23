@@ -2,8 +2,8 @@ object FormFirstTask: TFormFirstTask
   Left = 0
   Top = 0
   Caption = #1047#1072#1076#1072#1085#1080#1077' '#1076#1083#1103' '#1089#1086#1073#1077#1089#1077#1076#1086#1074#1072#1085#1080#1103' ('#1087#1077#1088#1074#1072#1103' '#1095#1072#1089#1090#1100')'
-  ClientHeight = 556
-  ClientWidth = 637
+  ClientHeight = 563
+  ClientWidth = 639
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,17 +19,24 @@ object FormFirstTask: TFormFirstTask
     Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077' '#1092#1080#1088#1084#1099
   end
   object Label2: TLabel
-    Left = 102
-    Top = 40
-    Width = 33
+    Left = 8
+    Top = 45
+    Width = 112
+    Height = 18
+    Caption = #1070#1088#1080#1076#1080#1095#1077#1089#1082#1080#1081' '#1072#1076#1088#1077#1089
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 78
+    Width = 91
     Height = 15
-    Caption = #1040#1076#1088#1077#1089
+    Caption = #1055#1086#1095#1090#1086#1074#1099#1081' '#1072#1076#1088#1077#1089
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 80
+    Top = 120
     Width = 641
-    Height = 465
+    Height = 425
     DataSource = DataSource1
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -60,27 +67,44 @@ object FormFirstTask: TFormFirstTask
         Visible = True
       end>
   end
-  object Edit1: TEdit
+  object ENameFirm: TEdit
     Left = 144
     Top = 8
     Width = 121
     Height = 23
     TabOrder = 1
   end
-  object Edit2: TEdit
+  object EJurCity: TEdit
     Left = 144
-    Top = 37
+    Top = 43
     Width = 121
     Height = 23
     TabOrder = 2
   end
-  object Button1: TButton
-    Left = 280
-    Top = 36
+  object ButtonSearch: TButton
+    Left = 288
+    Top = 74
     Width = 121
     Height = 25
-    Caption = #1048#1089#1082#1072#1090#1100
+    Caption = #1055#1086#1080#1089#1082
     TabOrder = 3
+    OnClick = ButtonSearchClick
+  end
+  object EPostCity: TEdit
+    Left = 144
+    Top = 75
+    Width = 121
+    Height = 23
+    TabOrder = 4
+  end
+  object Button2: TButton
+    Left = 288
+    Top = 8
+    Width = 121
+    Height = 25
+    Caption = #1054#1095#1080#1089#1090#1080#1090#1100
+    TabOrder = 5
+    OnClick = Button2Click
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
@@ -93,14 +117,14 @@ object FormFirstTask: TFormFirstTask
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      
-        'SELECT f.name AS firm_name, c.name AS city_jur, c2.name AS city_' +
-        'post'
-      
-        'FROM (FIRM AS f INNER JOIN city AS c ON c.city_id = F.JUR_CITY_I' +
-        'D) LEFT JOIN city AS c2 ON c2.city_id = F.POST_CITY_ID'
+      'SELECT f.name AS firm_name, '
+      '          jc.name AS city_jur, '
+      '          pc.name AS city_post'
+      'FROM (FIRM AS f '
+      '     INNER JOIN city AS jc ON jc.city_id = F.JUR_CITY_ID) '
+      '     LEFT JOIN city AS pc ON pc.city_id = F.POST_CITY_ID'
       ''
-      'ORDER BY f.name;')
+      'ORDER BY f.name')
     Left = 568
     Top = 16
   end
