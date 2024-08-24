@@ -2,8 +2,8 @@ object FormFirstTask: TFormFirstTask
   Left = 0
   Top = 0
   Caption = #1047#1072#1076#1072#1085#1080#1077' '#1076#1083#1103' '#1089#1086#1073#1077#1089#1077#1076#1086#1074#1072#1085#1080#1103' ('#1087#1077#1088#1074#1072#1103' '#1095#1072#1089#1090#1100')'
-  ClientHeight = 563
-  ClientWidth = 639
+  ClientHeight = 553
+  ClientWidth = 644
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,7 +22,7 @@ object FormFirstTask: TFormFirstTask
     Left = 8
     Top = 45
     Width = 112
-    Height = 18
+    Height = 15
     Caption = #1070#1088#1080#1076#1080#1095#1077#1089#1082#1080#1081' '#1072#1076#1088#1077#1089
   end
   object Label3: TLabel
@@ -38,12 +38,18 @@ object FormFirstTask: TFormFirstTask
     Width = 641
     Height = 425
     DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
+    TitleFont.Style = [fsBold]
     Columns = <
       item
         Expanded = False
@@ -108,8 +114,8 @@ object FormFirstTask: TFormFirstTask
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 464
-    Top = 16
+    Left = 476
+    Top = 28
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -125,7 +131,7 @@ object FormFirstTask: TFormFirstTask
       '     LEFT JOIN city AS pc ON pc.city_id = F.POST_CITY_ID'
       ''
       'ORDER BY f.name')
-    Left = 568
-    Top = 16
+    Left = 574
+    Top = 28
   end
 end

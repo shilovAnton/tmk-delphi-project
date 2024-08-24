@@ -31,8 +31,15 @@ object FormMain: TFormMain
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\TMK_project\Data' +
-      'base1.mdb;Persist Security Info=False'
+      'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\TM' +
+      'K_project\Database1.mdb;Mode=Share Deny None;Persist Security In' +
+      'fo=False;Jet OLEDB:System database="";Jet OLEDB:Registry Path=""' +
+      ';Jet OLEDB:Database Password="";Jet OLEDB:Engine Type=5;Jet OLED' +
+      'B:Database Locking Mode=0;Jet OLEDB:Global Partial Bulk Ops=2;Je' +
+      't OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Passwo' +
+      'rd="";Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt D' +
+      'atabase=False;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet O' +
+      'LEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False'
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
