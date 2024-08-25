@@ -50,6 +50,11 @@ procedure TFormFirstTask.ButtonSearchClick(Sender: TObject);
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
+  {
+  Применение параметров в запросе не увенчалось успехом,
+  запрос некорректно отрабатывал при пустых полях датасета,
+  остановился на такой реализации
+  }
   ADOQuery1.SQL.Add('SELECT f.name AS firm_name, ' +
                            'jc.name AS city_jur, ' +
                            'pc.name AS city_post ' +
