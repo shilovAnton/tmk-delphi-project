@@ -19,9 +19,9 @@ type
     ButtonSearch: TButton;
     EPostCity: TEdit;
     Label3: TLabel;
-    Button2: TButton;
+    ButtonClear: TButton;
     procedure ButtonSearchClick(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure ButtonClearClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +38,7 @@ implementation
 uses
   uMain;
 
-procedure TFormFirstTask.Button2Click(Sender: TObject);
+procedure TFormFirstTask.ButtonClearClick(Sender: TObject);
 begin
    ENameFirm.Clear;
    EJurCity.Clear;

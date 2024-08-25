@@ -103,14 +103,14 @@ object FormFirstTask: TFormFirstTask
     Height = 23
     TabOrder = 4
   end
-  object Button2: TButton
+  object ButtonClear: TButton
     Left = 288
     Top = 8
     Width = 121
     Height = 25
     Caption = #1054#1095#1080#1089#1090#1080#1090#1100
     TabOrder = 5
-    OnClick = Button2Click
+    OnClick = ButtonClearClick
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1

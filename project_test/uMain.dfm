@@ -27,6 +27,7 @@ object FormMain: TFormMain
     Height = 65
     Caption = #1047#1072#1076#1072#1085#1080#1077' '#1076#1083#1103' '#1089#1086#1073#1077#1089#1077#1076#1086#1074#1072#1085#1080#1103' 2 ('#1074#1090#1086#1088#1072#1103' '#1095#1072#1089#1090#1100')'
     TabOrder = 1
+    OnClick = ButtonSecondTaskClick
   end
   object ADOConnection1: TADOConnection
     Connected = True

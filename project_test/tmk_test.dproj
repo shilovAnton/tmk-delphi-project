@@ -107,7 +107,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uSecondTask.pas">
-            <Form>Form1</Form>
+            <Form>FormSecondTask</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
